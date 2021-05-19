@@ -41,6 +41,7 @@ namespace CarRentalApp
             catch(Exception)
             {
                 //Error Message
+                //Email
                 MessageBox.Show("An error has occured");
                 
             }
