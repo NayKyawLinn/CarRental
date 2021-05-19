@@ -39,6 +39,7 @@ namespace CarRentalApp
         {
             if(!Utils.FormIsOpen("ManageRentalRecords"))
             {
+                //ManageRentalRecord
                 var manageRentalRecords = new ManageRentalRecords();
                 manageRentalRecords.MdiParent = this;
                 manageRentalRecords.Show();
