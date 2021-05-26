@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1C2A9607-C7FD-4931-815B-66278D046180}</ProjectGuid>
+    <ProjectGuid>{E164F79B-E4EE-42AE-985B-666E8413DAC8}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>OJTProject</RootNamespace>
-    <AssemblyName>OJTProject</AssemblyName>
+    <RootNamespace>OJTProjectFrom</RootNamespace>
+    <AssemblyName>OJTProjectFrom</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -54,26 +54,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CSVUtility.cs" />
     <Compile Include="OJTProject.cs">
-      <DependentUpon>OJTProjectDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="OJTProject.Designer.cs">
-      <DependentUpon>OJTProject.cs</DependentUpon>
-    </Compile>
-    <Compile Include="OJTProjectDb.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OJTProjectDb.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="OJTProjectDb.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OJTProjectDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="OJTProjectDb.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OJTProjectDb.edmx</DependentUpon>
+      <DependentUpon>OJTProjectFormDb.tt</DependentUpon>
     </Compile>
     <Compile Include="OJTProjectForm.cs">
       <SubType>Form</SubType>
@@ -81,42 +64,55 @@
     <Compile Include="OJTProjectForm.Designer.cs">
       <DependentUpon>OJTProjectForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OJTProjectFormDb.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OJTProjectFormDb.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OJTProjectFormDb.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OJTProjectFormDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OJTProjectFormDb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OJTProjectFormDb.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="OperationsUtlity.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="OJTProjectDb.edmx">
+    <EntityDeploy Include="OJTProjectFormDb.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>OJTProjectDb.Designer.cs</LastGenOutput>
+      <LastGenOutput>OJTProjectFormDb.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="OJTProjectDb.edmx.diagram">
-      <DependentUpon>OJTProjectDb.edmx</DependentUpon>
+    <None Include="OJTProjectFormDb.edmx.diagram">
+      <DependentUpon>OJTProjectFormDb.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="OJTProject.resx">
-      <DependentUpon>OJTProject.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OJTProjectForm.resx">
-      <DependentUpon>OJTProjectForm.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="OJTProjectDb.Context.tt">
+    <Content Include="OJTProjectFormDb.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>OJTProjectDb.Context.cs</LastGenOutput>
-      <DependentUpon>OJTProjectDb.edmx</DependentUpon>
+      <LastGenOutput>OJTProjectFormDb.Context.cs</LastGenOutput>
+      <DependentUpon>OJTProjectFormDb.edmx</DependentUpon>
     </Content>
-    <Content Include="OJTProjectDb.tt">
+    <Content Include="OJTProjectFormDb.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>OJTProjectDb.edmx</DependentUpon>
-      <LastGenOutput>OJTProjectDb.cs</LastGenOutput>
+      <DependentUpon>OJTProjectFormDb.edmx</DependentUpon>
+      <LastGenOutput>OJTProjectFormDb.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="OJTProjectForm.resx">
+      <DependentUpon>OJTProjectForm.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
