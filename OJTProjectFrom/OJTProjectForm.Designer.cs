@@ -91,6 +91,7 @@ namespace OJTProjectFrom
             // 
             // fileSystemWatcher1
             // 
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.Path = "D:\\CarRentalProject\\Testing";
             this.fileSystemWatcher1.SynchronizingObject = this;
             this.fileSystemWatcher1.Changed += new System.IO.FileSystemEventHandler(this.fileSystemWatcher1_Changed);

@@ -33,8 +33,6 @@ namespace OJTProjectFrom
                                       q.Status
                                   }).ToList();
             gvOJTProjectList.DataSource = OJTProjectList;
-            DataTable datatable = OperationsUtlity.createDataTable();
-           
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -90,7 +88,6 @@ namespace OJTProjectFrom
             };
             _db.OJTProjects.Add(renameFileList);
             _db.SaveChanges();
-         
             MessageBox.Show("File Deleted");
         }
 
@@ -119,7 +116,7 @@ namespace OJTProjectFrom
                     watcher.Path = @"D:\CarRentalProject\Testing";
                     watcher.NotifyFilter = NotifyFilters.LastAccess | NotifyFilters.LastWrite
                        | NotifyFilters.FileName | NotifyFilters.DirectoryName;
-                    watcher.Filter = "*.*";
+                    watcher.Filter = "*.";
                     watcher.EnableRaisingEvents = true;
                     watcher.Changed += new FileSystemEventHandler(fileSystemWatcher1_Changed);
                     watcher.Created += new FileSystemEventHandler(fileSystemWatcher1_Created);
@@ -138,14 +135,30 @@ namespace OJTProjectFrom
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            DataTable dt = OperationsUtlity.createDataTable();
+            var exportdata = _db.OJTProjects
+               .Select(q => new
+               {
+                   id = q.Id,
+                   name = q.FileName,
+                   status = q.Status,
+               }).ToList();
+            DataTable table = new DataTable();
+            table.Columns.Add("ID", typeof(int));
+            table.Columns.Add("File Name", typeof(string));
+            table.Columns.Add("File Status", typeof(string));
+            //Row Data
+            //data  
+            foreach (var files in exportdata)
+            {
+                table.Rows.Add(files.id, files.name, files.status);
+            }
             string filename = @"D:\CarRentalProject\Testing\data.csv";
-            dt.ToCSV(filename);
+            table.ToCSV(filename);
         }
-    
         private void btnStartWatching_TextChanged(object sender, EventArgs e)
         {
 
         }
     }
 }
+

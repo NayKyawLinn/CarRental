@@ -79,7 +79,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OJTProjectFormDb.edmx</DependentUpon>
     </Compile>
-    <Compile Include="OperationsUtlity.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
